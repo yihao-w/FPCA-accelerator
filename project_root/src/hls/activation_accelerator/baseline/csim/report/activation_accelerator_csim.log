@@ -1,0 +1,139 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../testbench.cpp in debug mode
+   Compiling ../../../../activation_accelerator.cpp in debug mode
+   Generating csim.exe
+Loading test data...
+Using data path: ../../../../../../data/
+Loading file: ../../../../../../data/X_test_tensor_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/Y_test_tensor_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+BF16 data loaded successfully
+in0 statistics: min=0, max=65535, mean=26455.6
+in1 statistics: min=0, max=65535, mean=26442.7
+=== HLS Activation Accelerator Testbench ===
+Trying to load: ../../../../../../data/golden_out_config_0_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_0_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 15019 15019 15019 15019 15019 
+Loading file: ../../../../../../data/golden_out_config_0_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 15019 15019 15019 15019 15019 
+Loaded Config 0 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_1_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_1_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_1_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 1 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_2_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_2_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_2_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 2 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_3_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_3_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_3_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 3 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_4_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_4_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_4_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 4 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_5_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_5_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_5_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 5 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_6_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_6_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_6_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 6 golden data from bf16
+Set activation_accelerator.stage = 0
+Data transfer complete
+
+--- Testing Config 0 ---
+Config 0 compute time: 2.9558 ms
+Output results saved to: ../../../../../../data/hls_output_config_0.bin
+Max Difference: 13542
+Config 0 test failed with 11846 errors
+
+--- Testing Config 1 ---
+Config 1 compute time: 1.5793 ms
+Output results saved to: ../../../../../../data/hls_output_config_1.bin
+Max Difference: 14056
+Config 1 test failed with 4429 errors
+
+--- Testing Config 2 ---
+Config 2 compute time: 2.139 ms
+Output results saved to: ../../../../../../data/hls_output_config_2.bin
+Max Difference: 0
+Config 2 test passed!
+
+--- Testing Config 3 ---
+Config 3 compute time: 2.3872 ms
+Output results saved to: ../../../../../../data/hls_output_config_3.bin
+Max Difference: 32768
+Config 3 test failed with 4497 errors
+
+--- Testing Config 4 ---
+Config 4 compute time: 4.7138 ms
+Output results saved to: ../../../../../../data/hls_output_config_4.bin
+Max Difference: 394
+Config 4 test failed with 7247 errors
+
+--- Testing Config 5 ---
+Config 5 compute time: 1.0263 ms
+Output results saved to: ../../../../../../data/hls_output_config_5.bin
+Max Difference: 0
+Config 5 test passed!
+
+--- Testing Config 6 ---
+Config 6 compute time: 3.0493 ms
+Output results saved to: ../../../../../../data/hls_output_config_6.bin
+Max Difference: 0
+Config 6 test passed!
+
+Total compute time for all configs: 17.8507 ms
+
+=== Test Complete ===
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

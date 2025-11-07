@@ -1,0 +1,177 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+  **** SW Build 5238294 on Nov  8 2024
+  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+  **** Start of session at: Fri Nov  7 15:24:48 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source E:/Xilinx/Vitis/2024.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] For user 'wyh' on host 'desktop-751avbt' (Windows NT_amd64 version 10.0) on Fri Nov 07 15:24:49 +0800 2025
+INFO: [HLS 200-10] In directory 'C:/Users/wyh/Desktop/project_root/src/hls'
+WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl
+Sourcing Tcl script 'run_hls.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset activation_accelerator 
+INFO: [HLS 200-10] Opening and resetting project 'C:/Users/wyh/Desktop/project_root/src/hls/activation_accelerator'.
+INFO: [HLS 200-1510] Running: add_files activation_accelerator.cpp 
+INFO: [HLS 200-10] Adding design file 'activation_accelerator.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files activation_accelerator.h 
+INFO: [HLS 200-10] Adding design file 'activation_accelerator.h' to the project
+INFO: [HLS 200-1510] Running: add_files -tb testbench.cpp 
+INFO: [HLS 200-10] Adding test bench file 'testbench.cpp' to the project
+INFO: [HLS 200-1510] Running: set_top activation_accelerator 
+INFO: [HLS 200-1510] Running: open_solution -reset baseline -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution 'C:/Users/wyh/Desktop/project_root/src/hls/activation_accelerator/baseline'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xck26-sfvc784-2LV-c 
+INFO: [HLS 200-1611] Setting target device to 'xck26-sfvc784-2LV-c'
+INFO: [HLS 200-1510] Running: create_clock -period 10 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../testbench.cpp in debug mode
+   Compiling ../../../../activation_accelerator.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../activation_accelerator.cpp:4:
+In file included from E:/Xilinx/Vitis/2024.2/include/hls_math.h:27:
+In file included from E:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
+In file included from E:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
+In file included from E:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
+In file included from E:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
+E:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+E:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+Loading test data...
+Using data path: ../../../../../../data/
+Loading file: ../../../../../../data/X_test_tensor_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/Y_test_tensor_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+BF16 data loaded successfully
+in0 statistics: min=0, max=65535, mean=26455.6
+in1 statistics: min=0, max=65535, mean=26442.7
+=== HLS Activation Accelerator Testbench ===
+Trying to load: ../../../../../../data/golden_out_config_0_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_0_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 15019 15019 15019 15019 15019 
+Loading file: ../../../../../../data/golden_out_config_0_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 15019 15019 15019 15019 15019 
+Loaded Config 0 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_1_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_1_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_1_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 1 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_2_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_2_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_2_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 2 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_3_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_3_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_3_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 3 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_4_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_4_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_4_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 4 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_5_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_5_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_5_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 5 golden data from bf16
+Trying to load: ../../../../../../data/golden_out_config_6_bf16.bin
+Loading file: ../../../../../../data/golden_out_config_6_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loading file: ../../../../../../data/golden_out_config_6_bf16.bin
+File size: 98304 bytes
+Expected size: 98304 bytes
+First 5 loaded values: 0 0 0 0 0 
+Loaded Config 6 golden data from bf16
+Set activation_accelerator.stage = 0
+Data transfer complete
+
+--- Testing Config 0 ---
+Config 0 compute time: 2.9558 ms
+Output results saved to: ../../../../../../data/hls_output_config_0.bin
+Max Difference: 13542
+Config 0 test failed with 11846 errors
+
+--- Testing Config 1 ---
+Config 1 compute time: 1.5793 ms
+Output results saved to: ../../../../../../data/hls_output_config_1.bin
+Max Difference: 14056
+Config 1 test failed with 4429 errors
+
+--- Testing Config 2 ---
+Config 2 compute time: 2.139 ms
+Output results saved to: ../../../../../../data/hls_output_config_2.bin
+Max Difference: 0
+Config 2 test passed!
+
+--- Testing Config 3 ---
+Config 3 compute time: 2.3872 ms
+Output results saved to: ../../../../../../data/hls_output_config_3.bin
+Max Difference: 32768
+Config 3 test failed with 4497 errors
+
+--- Testing Config 4 ---
+Config 4 compute time: 4.7138 ms
+Output results saved to: ../../../../../../data/hls_output_config_4.bin
+Max Difference: 394
+Config 4 test failed with 7247 errors
+
+--- Testing Config 5 ---
+Config 5 compute time: 1.0263 ms
+Output results saved to: ../../../../../../data/hls_output_config_5.bin
+Max Difference: 0
+Config 5 test passed!
+
+--- Testing Config 6 ---
+Config 6 compute time: 3.0493 ms
