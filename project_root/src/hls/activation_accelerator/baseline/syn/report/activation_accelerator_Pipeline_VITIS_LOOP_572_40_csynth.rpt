@@ -1,0 +1,612 @@
+
+
+================================================================
+== Vitis HLS Report for 'activation_accelerator_Pipeline_VITIS_LOOP_572_40'
+================================================================
+* Date:           Fri Nov  7 12:05:52 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        activation_accelerator
+* Solution:       baseline (Vivado IP Flow Target)
+* Product family: zynquplus
+* Target device:  xck26-sfvc784-2LV-c
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.016 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  |                    Pipeline                    |
+    |   min   |   max   |    min    |    max    |  min |  max |                      Type                      |
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+    |     8231|     8231|  82.310 us|  82.310 us|  8193|  8193|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------+---------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |                           |               |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+        |          Instance         |     Module    |   min   |   max   |    min    |    max    | min | max |   Type  |
+        +---------------------------+---------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |grp_lut_erf_fu_1086        |lut_erf        |       22|       22|   0.220 us|   0.220 us|    1|    1|      yes|
+        |grp_lut_erf_fu_1093        |lut_erf        |       22|       22|   0.220 us|   0.220 us|    1|    1|      yes|
+        |grp_lut_erf_fu_1100        |lut_erf        |       22|       22|   0.220 us|   0.220 us|    1|    1|      yes|
+        |grp_lut_erf_fu_1107        |lut_erf        |       22|       22|   0.220 us|   0.220 us|    1|    1|      yes|
+        |grp_lut_erf_fu_1114        |lut_erf        |       22|       22|   0.220 us|   0.220 us|    1|    1|      yes|
+        |grp_lut_erf_fu_1121        |lut_erf        |       22|       22|   0.220 us|   0.220 us|    1|    1|      yes|
+        |grp_float_to_bf16_fu_1128  |float_to_bf16  |        1|        1|  10.000 ns|  10.000 ns|    1|    1|      yes|
+        |grp_float_to_bf16_fu_1141  |float_to_bf16  |        1|        1|  10.000 ns|  10.000 ns|    1|    1|      yes|
+        |grp_float_to_bf16_fu_1154  |float_to_bf16  |        1|        1|  10.000 ns|  10.000 ns|    1|    1|      yes|
+        |grp_float_to_bf16_fu_1167  |float_to_bf16  |        1|        1|  10.000 ns|  10.000 ns|    1|    1|      yes|
+        |grp_float_to_bf16_fu_1180  |float_to_bf16  |        1|        1|  10.000 ns|  10.000 ns|    1|    1|      yes|
+        |grp_float_to_bf16_fu_1193  |float_to_bf16  |        1|        1|  10.000 ns|  10.000 ns|    1|    1|      yes|
+        +---------------------------+---------------+---------+---------+-----------+-----------+-----+-----+---------+
+
+        * Loop: 
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                     |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_572_40  |     8229|     8229|        39|          1|          1|  8192|       yes|
+        +---------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|     184|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        6|    90|   12166|   12906|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       0|     996|    -|
+|Register         |        -|     -|    2235|     448|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        6|    90|   14401|   14534|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |      288|  1248|  234240|  117120|   64|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        2|     7|       6|      12|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------------------+-------------------------------+---------+----+------+------+-----+
+    |              Instance              |             Module            | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +------------------------------------+-------------------------------+---------+----+------+------+-----+
+    |fmul_32ns_32ns_32_3_max_dsp_1_U205  |fmul_32ns_32ns_32_3_max_dsp_1  |        0|   3|   128|   135|    0|
+    |fmul_32ns_32ns_32_3_max_dsp_1_U206  |fmul_32ns_32ns_32_3_max_dsp_1  |        0|   3|   128|   135|    0|
+    |grp_lut_erf_fu_1086                 |lut_erf                        |        1|  14|  1985|  2063|    0|
+    |grp_lut_erf_fu_1093                 |lut_erf                        |        1|  14|  1985|  2063|    0|
+    |grp_lut_erf_fu_1100                 |lut_erf                        |        1|  14|  1985|  2063|    0|
+    |grp_lut_erf_fu_1107                 |lut_erf                        |        1|  14|  1985|  2063|    0|
+    |grp_lut_erf_fu_1114                 |lut_erf                        |        1|  14|  1985|  2063|    0|
+    |grp_lut_erf_fu_1121                 |lut_erf                        |        1|  14|  1985|  2063|    0|
+    |sparsemux_17_3_16_1_1_U207          |sparsemux_17_3_16_1_1          |        0|   0|     0|    43|    0|
+    |sparsemux_17_3_16_1_1_U208          |sparsemux_17_3_16_1_1          |        0|   0|     0|    43|    0|
+    |sparsemux_17_3_16_1_1_U209          |sparsemux_17_3_16_1_1          |        0|   0|     0|    43|    0|
+    |sparsemux_17_3_16_1_1_U210          |sparsemux_17_3_16_1_1          |        0|   0|     0|    43|    0|
+    |sparsemux_17_3_16_1_1_U211          |sparsemux_17_3_16_1_1          |        0|   0|     0|    43|    0|
+    |sparsemux_17_3_16_1_1_U212          |sparsemux_17_3_16_1_1          |        0|   0|     0|    43|    0|
+    +------------------------------------+-------------------------------+---------+----+------+------+-----+
+    |Total                               |                               |        6|  90| 12166| 12906|    0|
+    +------------------------------------+-------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+----+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |global_idx_1_fu_1466_p2  |         +|   0|  0|  23|          16|           2|
+    |global_idx_2_fu_1494_p2  |         +|   0|  0|  23|          16|           3|
+    |global_idx_3_fu_1522_p2  |         +|   0|  0|  23|          16|           3|
+    |global_idx_fu_1438_p2    |         +|   0|  0|  23|          16|           2|
+    |i_3_fu_1334_p2           |         +|   0|  0|  21|          14|           1|
+    |sub_ln577_fu_1374_p2     |         -|   0|  0|  23|          16|          16|
+    |sub_ln578_fu_1388_p2     |         -|   0|  0|  22|          15|          15|
+    |ap_condition_1406        |       and|   0|  0|   2|           1|           1|
+    |icmp_ln572_fu_1328_p2    |      icmp|   0|  0|  22|          14|          15|
+    |ap_enable_pp0            |       xor|   0|  0|   2|           1|           2|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |Total                    |          |   0|  0| 184|         125|          60|
+    +-------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |                                             Name                                            | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_1_address0_local   |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_1_d0_local         |  20|          4|   16|         64|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_20_address0_local  |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_21_address0_local  |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_22_address0_local  |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_23_address0_local  |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_24_address0_local  |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_25_address0_local  |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_26_address0_local  |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_27_address0_local  |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_28_address0_local  |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_29_address0_local  |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_2_address0_local   |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_2_d0_local         |  20|          4|   16|         64|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_3_address0_local   |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_3_d0_local         |  20|          4|   16|         64|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_4_address0_local   |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_4_d0_local         |  20|          4|   16|         64|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_5_address0_local   |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_5_d0_local         |  20|          4|   16|         64|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_6_address0_local   |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_6_d0_local         |  20|          4|   16|         64|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_7_address0_local   |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_7_d0_local         |  20|          4|   16|         64|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_8_address0_local   |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_8_d0_local         |  20|          4|   16|         64|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_9_address0_local   |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_9_d0_local         |  20|          4|   16|         64|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_address0_local     |  20|          4|   12|         48|
+    |activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_d0_local           |  20|          4|   16|         64|
+    |ap_done_int                                                                                  |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1                                                                      |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i                                                                           |   9|          2|   14|         28|
+    |i_1_fu_154                                                                                   |   9|          2|   14|         28|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_10_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_11_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_12_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_13_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_14_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_15_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_10_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_10_d0_local                                |  20|          4|   16|         64|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_11_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_11_d0_local                                |  20|          4|   16|         64|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_12_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_12_d0_local                                |  20|          4|   16|         64|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_13_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_13_d0_local                                |  20|          4|   16|         64|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_14_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_14_d0_local                                |  20|          4|   16|         64|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_15_address0_local                          |  20|          4|   12|         48|
+    |p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_15_d0_local                                |  20|          4|   16|         64|
+    +---------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                                                        | 996|        200|  670|       2620|
+    +---------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------+----+----+-----+-----------+
+    |                  Name                  | FF | LUT| Bits| Const Bits|
+    +----------------------------------------+----+----+-----+-----------+
+    |add836_1_reg_2337                       |  32|   0|   32|          0|
+    |add836_2_reg_2347                       |  32|   0|   32|          0|
+    |add836_3_reg_2357                       |  32|   0|   32|          0|
+    |add836_4_reg_2367                       |  32|   0|   32|          0|
+    |add836_5_reg_2377                       |  32|   0|   32|          0|
+    |add_reg_2327                            |  32|   0|   32|          0|
+    |ap_CS_fsm                               |   1|   0|    1|          0|
+    |ap_done_reg                             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter10                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter11                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter12                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter13                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter14                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter15                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter16                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter17                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter18                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter19                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter20                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter21                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter22                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter23                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter24                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter25                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter26                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter27                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter28                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter29                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter30                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter31                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter32                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter33                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter34                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter35                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter36                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter37                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter38                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter7                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter8                 |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter9                 |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter10_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter11_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter12_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter13_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter14_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter15_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter16_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter17_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter18_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter19_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg        |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter20_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter21_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter22_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter23_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter24_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter25_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter26_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter27_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter28_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter29_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg        |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter30_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter31_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter32_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter33_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter34_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter35_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter36_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter37_reg       |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter3_reg        |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter4_reg        |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter5_reg        |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter6_reg        |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter7_reg        |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter8_reg        |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter9_reg        |   1|   0|    1|          0|
+    |erf_arg_1_reg_2267                      |  32|   0|   32|          0|
+    |erf_arg_2_reg_2272                      |  32|   0|   32|          0|
+    |erf_arg_3_reg_2277                      |  32|   0|   32|          0|
+    |erf_arg_4_reg_2282                      |  32|   0|   32|          0|
+    |erf_arg_5_reg_2287                      |  32|   0|   32|          0|
+    |erf_arg_reg_2262                        |  32|   0|   32|          0|
+    |erf_val_1_reg_2297                      |  32|   0|   32|          0|
+    |erf_val_2_reg_2302                      |  32|   0|   32|          0|
+    |erf_val_3_reg_2307                      |  32|   0|   32|          0|
+    |erf_val_4_reg_2312                      |  32|   0|   32|          0|
+    |erf_val_5_reg_2317                      |  32|   0|   32|          0|
+    |erf_val_reg_2292                        |  32|   0|   32|          0|
+    |gelu_f_1_reg_2387                       |  32|   0|   32|          0|
+    |gelu_f_2_reg_2392                       |  32|   0|   32|          0|
+    |gelu_f_3_reg_2397                       |  32|   0|   32|          0|
+    |gelu_f_4_reg_2402                       |  32|   0|   32|          0|
+    |gelu_f_5_reg_2407                       |  32|   0|   32|          0|
+    |gelu_f_reg_2382                         |  32|   0|   32|          0|
+    |grp_float_to_bf16_fu_1128_ap_start_reg  |   1|   0|    1|          0|
+    |grp_float_to_bf16_fu_1141_ap_start_reg  |   1|   0|    1|          0|
+    |grp_float_to_bf16_fu_1154_ap_start_reg  |   1|   0|    1|          0|
+    |grp_float_to_bf16_fu_1167_ap_start_reg  |   1|   0|    1|          0|
+    |grp_float_to_bf16_fu_1180_ap_start_reg  |   1|   0|    1|          0|
+    |grp_float_to_bf16_fu_1193_ap_start_reg  |   1|   0|    1|          0|
+    |i_1_fu_154                              |  14|   0|   14|          0|
+    |i_reg_1863                              |  14|   0|   14|          0|
+    |icmp_ln572_reg_1870                     |   1|   0|    1|          0|
+    |in_assign_1_reg_2196                    |  16|   0|   16|          0|
+    |in_assign_2_reg_2201                    |  16|   0|   16|          0|
+    |in_assign_3_reg_2206                    |  16|   0|   16|          0|
+    |in_assign_4_reg_2211                    |  16|   0|   16|          0|
+    |in_assign_5_reg_2216                    |  16|   0|   16|          0|
+    |in_assign_6_reg_2221                    |  16|   0|   16|          0|
+    |mul835_1_reg_2332                       |  32|   0|   32|          0|
+    |mul835_2_reg_2342                       |  32|   0|   32|          0|
+    |mul835_3_reg_2352                       |  32|   0|   32|          0|
+    |mul835_4_reg_2362                       |  32|   0|   32|          0|
+    |mul835_5_reg_2372                       |  32|   0|   32|          0|
+    |mul_reg_2322                            |  32|   0|   32|          0|
+    |trunc_ln572_reg_1874                    |   3|   0|    3|          0|
+    |xi_5_reg_2256                           |  16|   0|   32|         16|
+    |xi_6_reg_2232                           |  16|   0|   32|         16|
+    |xi_7_reg_2238                           |  16|   0|   32|         16|
+    |xi_8_reg_2244                           |  16|   0|   32|         16|
+    |xi_9_reg_2250                           |  16|   0|   32|         16|
+    |xi_reg_2226                             |  16|   0|   32|         16|
+    |zext_ln587_1_reg_1936                   |  12|   0|   64|         52|
+    |zext_ln587_2_reg_1988                   |  12|   0|   64|         52|
+    |zext_ln587_3_reg_2040                   |  12|   0|   64|         52|
+    |zext_ln587_4_reg_2092                   |  12|   0|   64|         52|
+    |zext_ln587_5_reg_2144                   |  12|   0|   64|         52|
+    |zext_ln587_reg_1884                     |  12|   0|   64|         52|
+    |icmp_ln572_reg_1870                     |  64|  32|    1|          0|
+    |trunc_ln572_reg_1874                    |  64|  32|    3|          0|
+    |xi_5_reg_2256                           |  64|  32|   32|         16|
+    |xi_6_reg_2232                           |  64|  32|   32|         16|
+    |xi_7_reg_2238                           |  64|  32|   32|         16|
+    |xi_8_reg_2244                           |  64|  32|   32|         16|
+    |xi_9_reg_2250                           |  64|  32|   32|         16|
+    |xi_reg_2226                             |  64|  32|   32|         16|
+    |zext_ln587_1_reg_1936                   |  64|  32|   64|         52|
+    |zext_ln587_2_reg_1988                   |  64|  32|   64|         52|
+    |zext_ln587_3_reg_2040                   |  64|  32|   64|         52|
+    |zext_ln587_4_reg_2092                   |  64|  32|   64|         52|
+    |zext_ln587_5_reg_2144                   |  64|  32|   64|         52|
+    |zext_ln587_reg_1884                     |  64|  32|   64|         52|
+    +----------------------------------------+----+----+-----+-----------+
+    |Total                                   |2235| 448| 2327|        816|
+    +----------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------------------------------------------------------------------+-----+-----+------------+------------------------------------------------------------------------------+--------------+
+|                                       RTL Ports                                       | Dir | Bits|  Protocol  |                                 Source Object                                |    C Type    |
++---------------------------------------------------------------------------------------+-----+-----+------------+------------------------------------------------------------------------------+--------------+
+|ap_clk                                                                                 |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|ap_rst                                                                                 |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|ap_start                                                                               |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|ap_done                                                                                |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|ap_idle                                                                                |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|ap_ready                                                                               |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2560_p_din1                                                       |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2560_p_dout0                                                      |   in|   16|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2560_p_start                                                      |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2560_p_ready                                                      |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2560_p_done                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2560_p_idle                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2564_p_din1                                                       |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2564_p_dout0                                                      |   in|   16|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2564_p_start                                                      |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2564_p_ready                                                      |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2564_p_done                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2564_p_idle                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2568_p_din1                                                       |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2568_p_dout0                                                      |   in|   16|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2568_p_start                                                      |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2568_p_ready                                                      |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2568_p_done                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2568_p_idle                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2572_p_din1                                                       |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2572_p_dout0                                                      |   in|   16|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2572_p_start                                                      |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2572_p_ready                                                      |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2572_p_done                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2572_p_idle                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2576_p_din1                                                       |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2576_p_dout0                                                      |   in|   16|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2576_p_start                                                      |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2576_p_ready                                                      |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2576_p_done                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2576_p_idle                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2580_p_din1                                                       |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2580_p_dout0                                                      |   in|   16|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2580_p_start                                                      |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2580_p_ready                                                      |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2580_p_done                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_float_to_bf16_fu_2580_p_idle                                                       |   in|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2584_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2584_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2584_p_opcode                                                                   |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2584_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2584_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2588_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2588_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2588_p_opcode                                                                   |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2588_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2588_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2592_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2592_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2592_p_opcode                                                                   |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2592_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2592_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2596_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2596_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2596_p_opcode                                                                   |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2596_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2596_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2600_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2600_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2600_p_opcode                                                                   |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2600_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2600_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2604_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2604_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2604_p_opcode                                                                   |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2604_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2604_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2608_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2608_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2608_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2608_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2612_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2612_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2612_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2612_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2616_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2616_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2616_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2616_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2620_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2620_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2620_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2620_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2624_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2624_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2624_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2624_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2628_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2628_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2628_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2628_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2632_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2632_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2632_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2632_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2636_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2636_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2636_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2636_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2640_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2640_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2640_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2640_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2644_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2644_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2644_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2644_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2648_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2648_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2648_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2648_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2652_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2652_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2652_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2652_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2656_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2656_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2656_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2656_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2660_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2660_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2660_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2660_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2664_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2664_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2664_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2664_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2668_p_din0                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2668_p_din1                                                                     |  out|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2668_p_dout0                                                                    |   in|   32|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|grp_fu_2668_p_ce                                                                       |  out|    1|  ap_ctrl_hs|                             activation_accelerator_Pipeline_VITIS_LOOP_572_40|  return value|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_12_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_12|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_12_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_12|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_12_we0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_12|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_12_d0                                |  out|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_12|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_13_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_13|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_13_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_13|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_13_we0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_13|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_13_d0                                |  out|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_13|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_14_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_14|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_14_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_14|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_14_we0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_14|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_14_d0                                |  out|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_14|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_15_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_15|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_15_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_15|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_15_we0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_15|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_15_d0                                |  out|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_15|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_9_address0   |  out|   12|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_9|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_9_ce0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_9|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_9_we0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_9|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_9_d0         |  out|   16|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_9|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_8_address0   |  out|   12|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_8|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_8_ce0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_8|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_8_we0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_8|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_8_d0         |  out|   16|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_8|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_29_address0  |  out|   12|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_29|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_29_ce0       |  out|    1|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_29|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_29_q0        |   in|   16|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_29|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_27_address0  |  out|   12|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_27|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_27_ce0       |  out|    1|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_27|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_27_q0        |   in|   16|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_27|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_25_address0  |  out|   12|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_25|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_25_ce0       |  out|    1|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_25|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_25_q0        |   in|   16|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_25|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_23_address0  |  out|   12|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_23|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_23_ce0       |  out|    1|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_23|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_23_q0        |   in|   16|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_23|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_21_address0  |  out|   12|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_21|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_21_ce0       |  out|    1|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_21|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_21_q0        |   in|   16|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_21|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_10_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_10|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_10_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_10|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_10_q0                                |   in|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_10|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_12_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_12|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_12_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_12|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_12_q0                                |   in|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_12|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_14_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_14|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_14_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_14|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_14_q0                                |   in|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_14|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_28_address0  |  out|   12|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_28|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_28_ce0       |  out|    1|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_28|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_28_q0        |   in|   16|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_28|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_26_address0  |  out|   12|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_26|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_26_ce0       |  out|    1|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_26|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_26_q0        |   in|   16|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_26|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_24_address0  |  out|   12|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_24|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_24_ce0       |  out|    1|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_24|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_24_q0        |   in|   16|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_24|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_22_address0  |  out|   12|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_22|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_22_ce0       |  out|    1|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_22|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_22_q0        |   in|   16|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_22|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_20_address0  |  out|   12|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_20|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_20_ce0       |  out|    1|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_20|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_20_q0        |   in|   16|   ap_memory|  activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_20|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_11_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_11|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_11_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_11|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_11_q0                                |   in|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_11|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_13_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_13|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_13_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_13|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_13_q0                                |   in|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_13|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_15_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_15|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_15_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_15|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_15_q0                                |   in|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf0_banks_15|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_7_address0   |  out|   12|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_7|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_7_ce0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_7|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_7_we0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_7|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_7_d0         |  out|   16|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_7|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_6_address0   |  out|   12|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_6|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_6_ce0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_6|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_6_we0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_6|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_6_d0         |  out|   16|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_6|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_5_address0   |  out|   12|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_5|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_5_ce0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_5|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_5_we0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_5|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_5_d0         |  out|   16|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_5|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_4_address0   |  out|   12|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_4|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_4_ce0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_4|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_4_we0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_4|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_4_d0         |  out|   16|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_4|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_3_address0   |  out|   12|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_3|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_3_ce0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_3|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_3_we0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_3|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_3_d0         |  out|   16|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_3|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_2_address0   |  out|   12|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_2|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_2_ce0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_2|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_2_we0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_2|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_2_d0         |  out|   16|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_2|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_1_address0   |  out|   12|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_1|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_1_ce0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_1|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_1_we0        |  out|    1|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_1|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_1_d0         |  out|   16|   ap_memory|   activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_1|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_address0     |  out|   12|   ap_memory|     activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_ce0          |  out|    1|   ap_memory|     activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_we0          |  out|    1|   ap_memory|     activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i|         array|
+|activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i_d0           |  out|   16|   ap_memory|     activation_accelerator_unsigned_short_unsigned_short_unsigned_short_int_i|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_10_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_10|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_10_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_10|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_10_we0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_10|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_10_d0                                |  out|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_10|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_11_address0                          |  out|   12|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_11|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_11_ce0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_11|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_11_we0                               |  out|    1|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_11|         array|
+|p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_11_d0                                |  out|   16|   ap_memory|                          p_ZZ22activation_acceleratorPtS_S_iiE10buf2_banks_11|         array|
++---------------------------------------------------------------------------------------+-----+-----+------------+------------------------------------------------------------------------------+--------------+
+

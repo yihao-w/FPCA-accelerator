@@ -1,0 +1,54 @@
+<design_size title="Design Size Report">
+    <item name="Total Instructions per Compilation Phase">
+        <table>
+            <keys size="4">Phase, Step, Instructions, Description</keys>
+            <column name="Compile/Link">, 10392, After all functions are compiled and linked into a single design</column>
+            <column name="">, , </column>
+            <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
+            <column name="">(1) unroll, 19534, user unroll pragmas are applied</column>
+            <column name="">(2) simplification, 11922, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline, 10192, user inline pragmas are applied</column>
+            <column name="">(4) simplification,  8210, simplification of applied user inline pragmas</column>
+            <column name="">, , </column>
+            <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(1) array partition, 17405, user array partition pragmas are applied</column>
+            <column name="">(2) simplification,  8642, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate ,  8642, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape,  8642, apply array reshape pragmas</column>
+            <column name="">(5) access patterns,  8654, array access pattern optmizations</column>
+            <column name="">, , </column>
+            <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
+            <column name="">(1) loop simplification,  8654, loop and instruction simplification</column>
+            <column name="">(2) parallelization,  8654, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition,  8647, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification,  8647, simplification of design after performance transformations</column>
+            <column name="">, , </column>
+            <column name="HW Transforms">, , After hardware transfomations</column>
+            <column name="">(1) lowering,  8660, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations,  8619, high level synthesis optimizations</column>
+        </table>
+    </item>
+    <item name="Instructions per Function for each Compilation Phase">
+        <hiertable>
+            <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
+            <rows>
+                <row id="0" col0="activation_accelerator" col1="activation_accelerator.cpp:72" col2="10392" col3="8210" col4="8654" col5="8647" col6="8619">
+                    <row id="5" col0="bf16_to_float" col1="activation_accelerator.cpp:54" col2="132" col2_disp="  132 (12 calls)" col3="1176" col3_disp="1,176 (294 calls)" col4="1176" col4_disp="1,176 (294 calls)" col5="1176" col5_disp="1,176 (294 calls)" col6="1176" col6_disp="1,176 (294 calls)"/>
+                    <row id="11" col0="lut_exp" col1="activation_accelerator.cpp:15" col2="6480" col2_disp="6,480 (3 calls)" col3="2208" col3_disp="2,208 (48 calls)" col4="2208" col4_disp="2,208 (48 calls)" col5="2208" col5_disp="2,208 (48 calls)" col6="2208" col6_disp="2,208 (48 calls)"/>
+                    <row id="2" col0="float_to_bf16" col1="activation_accelerator.cpp:60" col2="108" col2_disp="  108 (6 calls)" col3="1500" col3_disp="1,500 (150 calls)" col4="1500" col4_disp="1,500 (150 calls)" col5="1500" col5_disp="1,500 (150 calls)" col6="1500" col6_disp="1,500 (150 calls)"/>
+                    <row id="9" col0="rsqrt" col1="rsqrtfloat.cpp:15" col2="2" col3="" col4="" col5="" col6=""/>
+                    <row id="1" col0="sqrtf" col1="sqrtfloat.cpp:11" col2="2" col3="" col4="" col5="" col6=""/>
+                    <row id="3" col0="lut_erf" col1="activation_accelerator.cpp:31" col2="2160" col3="276" col3_disp=" 276 (6 calls)" col4="276" col4_disp=" 276 (6 calls)" col5="276" col5_disp=" 276 (6 calls)" col6="276" col6_disp=" 276 (6 calls)"/>
+                </row>
+            </rows>
+            <notes/>
+        </hiertable>
+    </item>
+    <item name="Design Size Message Settings">
+        <table>
+            <keys size="3">Message Setting, Value, Description</keys>
+            <column name="config_compile -design_size_maximum_warning">100000, Show a warning when total design instructions exceeds this value</column>
+        </table>
+    </item>
+</design_size>
+
